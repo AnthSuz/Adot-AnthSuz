@@ -1,27 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
-import { Button } from '@mui/material';
+import './App.scss';
+import { Button, Modal } from '@mui/material';
+import { StoreContext, defaultState } from './stores/store';
+import { CardContainer } from './components/CardContainer';
 
 function App() {
+  console.log('defaultState', defaultState)  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Button variant="contained">Hello World</Button>
-    </div>
+      <StoreContext.Provider value={defaultState}>
+        <CardContainer />
+      </StoreContext.Provider>
   );
 }
 
