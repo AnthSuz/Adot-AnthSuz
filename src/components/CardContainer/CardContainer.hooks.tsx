@@ -1,6 +1,7 @@
 import { useStoreContext } from "../../stores/store"
 
 export function useCardContainer() {
-    const { test, isOpenModal, destinationData } = useStoreContext();
-    return { test, isOpenModal, destinationData }
+    const { destinationData, updateIsOpenModal } = useStoreContext();
+    
+    return { destinationData, updateIsOpenModal }
 }

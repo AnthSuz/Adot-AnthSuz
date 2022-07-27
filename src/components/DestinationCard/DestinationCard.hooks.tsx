@@ -32,7 +32,6 @@ export function useDestinationCard() {
             default: 
             return information.toLocaleString();
         }
-           
     }, [])
 
     return { informationDestination, getTitleInformation, getInformationByTitle }

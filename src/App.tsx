@@ -1,16 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
-import { Button, Modal } from '@mui/material';
-import { StoreContext, defaultState } from './stores/store';
+import { Provider } from './stores/store';
 import { CardContainer } from './components/CardContainer';
 
-function App() {
-  console.log('defaultState', defaultState)  
+function App() { 
   return (
-      <StoreContext.Provider value={defaultState}>
+      <Provider>
         <CardContainer />
-      </StoreContext.Provider>
+      </Provider>
   );
 }
 

@@ -19,13 +19,12 @@ export const DestinationCard = ({destination}: Props) => {
                     <Typography variant="h6">{destination.nameDestination}</Typography>
                     <Typography variant="caption">{destination.address}</Typography>
                 </div>
-                <Switch color='success' checked={destination.isActived} />
+                <Switch color='success' />
             </div>
             <div className="information-destination">  
-                {informationDestination?.map((information) => {
-                    console.log('tatata', typeof  destination[information as keyof Destination])
+                {informationDestination?.map((information, i) => {
                     return (
-                    <div>
+                    <div key={i}>
                         <Typography variant="body2" className="title">{getInformationByTitle(information, destination[information as keyof Destination])}</Typography>
                         <Typography variant="caption">{getTitleInformation(information)}</Typography>
                     </div>
